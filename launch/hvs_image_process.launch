@@ -1,0 +1,29 @@
+<launch>
+
+  <!-- Image publisher node -->
+  <node
+      pkg = "course_tutorials"
+      type = "publish_image.py"
+      name = "publish_image_node"
+      args = "$(find course_tutorials)/img/blue_line_floor_1.png"
+      />
+
+  <!-- Image processing node -->
+  <node
+      pkg = "course_tutorials"
+      type = "image_process_hsv.py"
+      name = "image_process_hsv_node"
+      />
+  
+  <!-- Dynamic reconfigure -->
+  <node
+      pkg = "rqt_reconfigure"
+      type = "rqt_reconfigure"
+      name = "rqt_console"
+      args = "-t"
+      />
+
+</launch>
+
+
+

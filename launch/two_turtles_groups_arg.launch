@@ -1,0 +1,24 @@
+<launch>
+
+  <!-- Define arguments -->
+  <arg name="run_group2" default="true" />
+  
+  <!-- Namespace ns1 -->
+  <group ns="ns1">
+    <node pkg = "turtlesim" type = "turtlesim_node" name = "turtlesim"/>
+    <node pkg = "turtlesim" type = "turtle_teleop_key" name = "teleop_key"
+	  launch-prefix = "xterm -e"/>
+  </group>
+
+  <!-- Namespace ns2 -->
+  <group if="$(arg run_group2)">
+    <group ns="ns2">
+      <node pkg = "turtlesim" type = "turtlesim_node" name = "turtlesim"/>
+      <node pkg = "turtlesim" type = "turtle_teleop_key" name = "teleop_key"
+	    launch-prefix = "xterm -e"/>
+    </group>
+  </group>
+
+</launch>
+
+

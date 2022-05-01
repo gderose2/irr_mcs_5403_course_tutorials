@@ -1,0 +1,28 @@
+<launch>
+
+  <!-- Publisher node -->
+  <node
+      pkg = "course_tutorials"
+      type = "publisher_dyn.py"
+      name = "publisher_dyn_node"
+      />
+
+  <!-- Dynamic reconfigure -->
+  <node
+      pkg = "rqt_reconfigure"
+      type = "rqt_reconfigure"
+      name = "rqt_console"
+      args = "-t"
+      />
+
+  <!-- rqt_plot -->
+  <node
+      pkg = "rqt_plot"
+      type = "rqt_plot"
+      name = "rqt_plot_node"
+      />
+
+</launch>
+
+
+

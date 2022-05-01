@@ -1,0 +1,7 @@
+bool_param: true
+double_param: 0.75
+int_param: 25
+str_param: Hello World Version 2
+fun_type: 0
+
+

@@ -1,0 +1,17 @@
+<launch>
+
+  <!-- Namespace ns1 -->
+  <node pkg = "turtlesim" type = "turtlesim_node" name = "turtlesim" ns="ns1" />
+
+  <node pkg = "turtlesim" type = "turtle_teleop_key" name = "teleop_key"
+      launch-prefix = "xterm -e" ns="ns1" />
+
+  <!-- Namespace ns2 -->
+  <node pkg = "turtlesim" type = "turtlesim_node" name = "turtlesim" ns="ns2" />
+
+  <node pkg = "turtlesim" type = "turtle_teleop_key" name = "teleop_key"
+      launch-prefix = "xterm -e" ns="ns2" />
+
+</launch>
+
+
