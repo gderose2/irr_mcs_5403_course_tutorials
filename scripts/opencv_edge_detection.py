@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-
 import cv2 as cv
-import numpy as np
 import sys
 
-# Thresholds
+# Parameters
 thres1 = 0
 thres2 = 0
 aperture = 0
@@ -26,7 +24,6 @@ cv.createTrackbar('thres1','controls',    0, 255, callback)
 cv.createTrackbar('thres2','controls',    0, 255, callback)
 cv.createTrackbar('aperture_3_5_7','controls',  0, 2, callback)
 
-
 # Read an image
 img = cv.imread(sys.argv[1])
 
@@ -40,7 +37,7 @@ while(1):
     img_gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
     # Apply Canny edge detector
-    img_canny = cv.Canny(img, thres1, thres2,
+    img_canny = cv.Canny(img_gray, thres1, thres2,
                          apertureSize=aperture_list[aperture])
 
     # Show the Canny image

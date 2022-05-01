@@ -48,7 +48,6 @@ cv.createTrackbar('aperture_3_5_7','controls',  0, 2, callback)
 # Read the image
 img_orig = cv.imread(sys.argv[1])
 
-# Loop for edits
 while(1):
 
     # Conver to HSV
@@ -60,15 +59,16 @@ while(1):
 
     # Get filter image
     mask = cv.inRange(img_hsv, hsv_low, hsv_high)
-    res = cv.bitwise_and(img_orig, img_orig, mask=mask)
+    img_hsv_mask = cv.bitwise_and(img_orig, img_orig, mask=mask)
 
     # Apply Canny edge detector
     img_canny = cv.Canny(mask, thres1, thres2,
                          apertureSize=aperture_list[aperture])
 
     # Show images
+    cv.imshow('Source',img_orig)
     cv.imshow('Mask',mask)
-    cv.imshow('Result',res)
+    cv.imshow('HSV Mask', img_hsv_mask)
     cv.imshow('Canny', img_canny)
         
     # Exit on key enter
