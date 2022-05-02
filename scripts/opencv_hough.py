@@ -41,7 +41,6 @@ if( line_segments is not None ):
 cv.imshow('Source', img)
 cv.imshow('Source + Lines', img_lines)
 cv.imshow('Canny', img_canny)
-
 cv.waitKey(0)
 
 

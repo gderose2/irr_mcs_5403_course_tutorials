@@ -84,9 +84,6 @@ while(1):
             thickness = 2
             end_pt_rad = 5
             cv.line(img_lines, pt1, pt2, color, thickness)
-            #cv.circle(img_lines, pt1, end_pt_rad, 255, -1)
-            #cv.circle(img_lines, pt2, end_pt_rad, 255, -1)
-            #print('Line (%d,%d) -> (%d,%d)' % (pts[0], pts[1], pts[2], pts[3]))
 
     # Show images
     cv.imshow('Source',img_orig)
