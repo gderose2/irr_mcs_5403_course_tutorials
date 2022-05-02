@@ -27,7 +27,7 @@ line_segments = cv.HoughLinesP(img_canny, rho, angle,
 
 # Draw new image with lines
 img_lines = img.copy()
-if( len(line_segments) > 0 ):
+if( line_segments is not None ):
     for line in line_segments:
         pts = line[0]
         pt1 = (pts[0],pts[1])
